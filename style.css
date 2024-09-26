@@ -1,0 +1,161 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #1a1a1a; /* Donkergrijze achtergrondkleur */
+    color: #f2f2f2; /* Lichte tekstkleur */
+}
+
+/* Navigatiebalk */
+header {
+    background-color: #333; /* Zwarte achtergrondkleur voor de header */
+    padding: 30px 0; /* Vergroot de padding verder om de header hoger te maken */
+    position: relative;
+}
+
+.navbar {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center; /* Verticaal uitlijnen */
+    flex-wrap: wrap;
+}
+
+.navbar li {
+    margin: 0 15px;
+}
+
+.navbar a {
+    text-decoration: none;
+    color: #f2f2f2; /* Lichte tekstkleur voor de links */
+    font-weight: bold;
+    padding: 15px 20px; /* Vergroot de padding rond de links */
+    font-size: 1.3em; /* Vergroot de tekst in de navigatie */
+}
+
+.navbar a:hover {
+    background-color: #444; /* Iets lichtere zwarte kleur bij hover */
+    border-radius: 5px;
+}
+
+/* Logo styling */
+.navbar-logo {
+    width: 40px;
+    height: 40px;
+    vertical-align: middle;
+    object-fit: contain; /* Zorgt ervoor dat het logo netjes blijft */
+}
+
+/* Hamburger menu styling */
+.menu-toggle {
+    display: none;
+    cursor: pointer;
+    position: absolute;
+    top: 10px; /* Iets hoger */
+    left: 10px; /* Aan de linkerkant van de header */
+}
+
+.menu-toggle .bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: #f2f2f2;
+    margin: 5px auto;
+    transition: 0.3s;
+}
+
+/* Hero sectie */
+.hero {
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: #1a1a1a;
+}
+
+.hero h1 {
+    font-size: 3em;
+    margin: 0;
+    color: #f2f2f2;
+}
+
+.hero p {
+    font-size: 1.2em;
+    margin: 15px 0;
+    color: #bfbfbf; /* Lichtere grijstint voor de subtitel */
+}
+
+.btn {
+    text-decoration: none;
+    background-color: #333; /* Zwarte kleur voor de knop */
+    color: #f2f2f2;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.btn:hover {
+    background-color: #444; /* Iets lichtere kleur bij hover */
+}
+
+/* Footer */
+footer {
+    background-color: #333; /* Zwarte achtergrondkleur voor de footer */
+    text-align: center;
+    padding: 30px 0; /* Vergroot de padding verder om de footer hoger te maken */
+    font-size: 1.2em; /* Vergroot de tekst in de footer */
+    position: absolute; 
+    width: 100%;
+    bottom: 0;
+}
+
+footer p {
+    margin: 0;
+    color: #bfbfbf; /* Lichtere grijstint voor de footer tekst */
+}
+
+/* Responsive styling */
+@media (max-width: 768px) {
+    .navbar {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background-color: #333;
+        position: absolute;
+        top: 60px; /* Positioneer de navbar net onder de hamburger menu */
+        left: 0;
+    }
+    
+    .navbar.active {
+        display: flex;
+    }
+
+    .navbar li {
+        display: block;
+        margin: 0;
+    }
+
+    .navbar a {
+        display: block;
+        padding: 15px;
+        text-align: center;
+    }
+
+    footer {
+        margin: 0;
+        bottom: 0;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+}

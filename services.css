@@ -1,0 +1,177 @@
+/* Algemene opmaak */
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%; /* Zorg ervoor dat html en body de volledige hoogte hebben */
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #1a1a1a; /* Donkergrijze achtergrondkleur */
+    color: #f2f2f2; /* Lichte tekstkleur */
+    display: flex;
+    flex-direction: column;
+}
+
+/* Navigatiebalk */
+header {
+    background-color: #333; /* Zwarte achtergrondkleur voor de header */
+    padding: 30px 0; /* Vergroot de padding verder om de header hoger te maken */
+    position: relative;
+}
+
+.navbar {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.navbar li {
+    display: inline;
+    margin: 0 15px;
+}
+.navbar-logo {
+    width: 40px;
+    height: 40px;
+    vertical-align: middle;
+    object-fit: contain; /* Zorgt ervoor dat het logo netjes blijft */
+}
+
+.navbar a {
+    text-decoration: none;
+    color: #f2f2f2; /* Lichte tekstkleur voor de links */
+    font-weight: bold;
+    padding: 15px 20px; /* Vergroot de padding rond de links */
+    font-size: 1.3em; /* Vergroot de tekst in de navigatie */
+}
+
+.navbar a:hover {
+    background-color: #444; /* Iets lichtere zwarte kleur bij hover */
+    border-radius: 5px;
+}
+
+/* Hamburger menu styling */
+.menu-toggle {
+    display: none;
+    cursor: pointer;
+    position: absolute;
+    top: 20px; /* Iets hoger in de header */
+    left: 20px; /* Aan de linkerkant van de header */
+}
+
+.menu-toggle .bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: #f2f2f2;
+    margin: 5px auto;
+    transition: 0.3s;
+}
+
+/* Hero sectie */
+.services-section {
+    padding: 40px 20px; /* Ruime padding voor de sectie */
+    max-width: 1200px;
+    margin: 0 auto; /* Centreer de sectie op de pagina */
+    text-align: left; /* Links uitlijnen van de tekst */
+    flex: 1; /* Zorg ervoor dat de sectie groeit om ruimte in te nemen */
+}
+
+.service-package {
+    display: flex;
+    flex-direction: row;
+    align-items: center; /* Verticaal uitlijnen van de items */
+    margin-bottom: 60px; /* Ruimte tussen de pakketten en footer */
+    flex-wrap: wrap; /* Zorg ervoor dat pakketten bij kleinere schermen kunnen omslaan */
+}
+
+.slider {
+    position: relative;
+    width: 300px; /* Grotere breedte voor de slider */
+    height: 200px; /* Grotere hoogte voor de slider */
+    overflow: hidden; /* Verberg overlappende delen van afbeeldingen */
+    margin-right: 20px; /* Ruimte tussen afbeelding en tekst */
+}
+
+.slider-image {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Zorgt ervoor dat afbeeldingen de container vullen zonder vervorming */
+    border-radius: 15px; /* Ronde hoeken voor de afbeeldingen */
+    transition: opacity 1s ease-in-out, box-shadow 0.3s ease; /* Voeg transities toe voor hover-effecten */
+}
+
+.slider-image:hover {
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.6); /* Lichteffect met box-shadow bij hover */
+}
+
+.package-description {
+    max-width: 800px; /* Maximaal breedte voor de tekst */
+}
+
+.package-description h2 {
+    font-size: 2em;
+    margin-bottom: 10px;
+    color: #f2f2f2;
+}
+
+.package-description p {
+    font-size: 1.2em;
+    line-height: 1.6;
+    color: #bfbfbf; /* Lichtere grijstint voor de paragraaftekst */
+}
+
+/* Footer */
+footer {
+    background-color: #333; /* Zwarte achtergrondkleur voor de footer */
+    text-align: center;
+    padding: 30px 0; /* Vergroot de padding verder om de footer hoger te maken */
+    font-size: 1.2em; /* Vergroot de tekst in de footer */
+    position: relative;
+    width: 100%;
+    margin-top: auto; /* Zorg ervoor dat de footer altijd onderaan blijft */
+}
+@media (max-width: 768px) {
+    .navbar {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background-color: #333;
+        position: absolute;
+        top: 60px; /* Zorg ervoor dat de navbar onder de hamburger menu komt */
+        left: 0;
+    }
+    
+    .navbar.active {
+        display: flex;
+    }
+
+    .navbar li {
+        display: block;
+        margin: 0;
+    }
+
+    .navbar a {
+        display: block;
+        padding: 15px;
+        text-align: center;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .about-content {
+        flex-direction: column; /* Verander naar kolom richting op kleinere schermen */
+        text-align: center; /* Centreer de tekst in de kolom */
+    }
+
+    .about-image, .text-content {
+        max-width: 100%; /* Zorg ervoor dat beide elementen niet groter zijn dan de breedte van het scherm */
+    }
+}

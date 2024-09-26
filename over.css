@@ -1,0 +1,184 @@
+/* Algemene opmaak */
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #1a1a1a; /* Donkergrijze achtergrondkleur */
+    color: #f2f2f2; /* Lichte tekstkleur */
+    display: flex;
+    flex-direction: column;
+}
+
+/* Navigatiebalk */
+header {
+    background-color: #333; /* Zwarte achtergrondkleur voor de header */
+    padding: 30px 0; /* Vergroot de padding verder om de header hoger te maken */
+    position: relative;
+}
+
+.navbar {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center; /* Zorg ervoor dat alle items verticaal gecentreerd zijn */
+    flex-wrap: wrap;
+}
+
+.navbar li {
+    display: inline;
+    margin: 0 15px;
+}
+
+.navbar a {
+    text-decoration: none;
+    color: #f2f2f2; /* Lichte tekstkleur voor de links */
+    font-weight: bold;
+    padding: 15px 20px; /* Vergroot de padding rond de links */
+    font-size: 1.3em; /* Vergroot de tekst in de navigatie */
+    display: flex; /* Maak de link een flex container */
+    align-items: center; /* Centreer de inhoud verticaal */
+}
+
+.navbar-logo {
+    width: 40px; /* Pas de breedte aan indien nodig */
+    height: 40px; /* Pas de hoogte aan indien nodig */
+    margin-left: 5px; /* Voeg wat marge toe om afstand te creëren */
+}
+
+.navbar a:hover {
+    background-color: #444; /* Iets lichtere zwarte kleur bij hover */
+    border-radius: 5px;
+}
+
+/* Hamburger menu styling */
+.menu-toggle {
+    display: none;
+    cursor: pointer;
+    position: absolute;
+    top: 20px; /* Iets hoger in de header */
+    left: 20px; /* Aan de linkerkant van de header */
+}
+
+.menu-toggle .bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: #f2f2f2;
+    margin: 5px auto;
+    transition: 0.3s;
+}
+
+/* Hero sectie */
+.about-section {
+    padding: 40px 20px; /* Ruime padding voor de sectie */
+    max-width: 1200px;
+    margin: 0 auto; /* Centreer de sectie op de pagina */
+    flex: 1; /* Zorg ervoor dat de sectie groeit om ruimte in te nemen */
+}
+
+.about-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px; /* Ruimte tussen afbeelding en tekst */
+    flex-direction: row; /* Standaard horizontale uitlijning */
+}
+
+.about-image {
+    max-width: 50%; /* Zorg ervoor dat de afbeelding niet te groot wordt */
+    height: auto;
+    border-radius: 10px; /* Ronde hoeken voor de afbeelding */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Schaduw rondom de afbeelding */
+    transition: box-shadow 0.3s ease, transform 0.3s ease; /* Voor soepele overgangseffecten */
+}
+
+.about-image:hover {
+    box-shadow: 0 8px 16px rgba(255, 255, 255, 0.6); /* Lichter effect bij hover */
+    transform: scale(1.05); /* Vergroot de afbeelding een beetje */
+}
+
+/* Tekstinhoud */
+.text-content {
+    max-width: 50%; /* Zorg ervoor dat de tekst niet te breed is */
+}
+
+.text-content h1 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    color: #f2f2f2;
+}
+
+.text-content p {
+    font-size: 1.2em;
+    line-height: 1.6;
+    margin-bottom: 15px;
+    color: #bfbfbf; /* Lichtere grijstint voor de paragraaftekst */
+}
+
+/* Footer */
+footer {
+    background-color: #333; /* Zwarte achtergrondkleur voor de footer */
+    text-align: center;
+    padding: 30px 0; /* Vergroot de padding verder om de footer hoger te maken */
+    font-size: 1.2em;
+    width: 100%; /* Vergroot de tekst in de footer */
+}
+
+/* Zorg ervoor dat de footer altijd onderaan de pagina staat */
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+footer {
+    margin-top: auto; /* Zorg ervoor dat de footer altijd onderaan blijft */
+}
+
+/* Responsive styling */
+@media (max-width: 768px) {
+    .navbar {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background-color: #333;
+        position: absolute;
+        top: 60px; /* Zorg ervoor dat de navbar onder de hamburger menu komt */
+        left: 0;
+    }
+    
+    .navbar.active {
+        display: flex;
+    }
+
+    .navbar li {
+        display: block;
+        margin: 0;
+    }
+
+    .navbar a {
+        display: block;
+        padding: 15px;
+        text-align: center;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .about-content {
+        flex-direction: column; /* Verander naar kolom richting op kleinere schermen */
+        text-align: center; /* Centreer de tekst in de kolom */
+    }
+
+    .about-image, .text-content {
+        max-width: 100%; /* Zorg ervoor dat beide elementen niet groter zijn dan de breedte van het scherm */
+    }
+}
